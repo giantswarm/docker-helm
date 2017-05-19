@@ -1,8 +1,8 @@
-FROM alpine
+FROM ubuntu
 
-RUN apk add --update ca-certificates \
-    && apk add --update -t deps wget bash \
-    && rm /var/cache/apk/*
+RUN apt-get -y update \
+    && apt-get -y install \
+    wget
     
 RUN wget https://storage.googleapis.com/kubernetes-helm/helm-v2.4.2-linux-amd64.tar.gz -qO- | tar xzf - linux-amd64/helm \
     && chmod +x ./linux-amd64/helm \
