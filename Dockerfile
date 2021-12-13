@@ -1,4 +1,4 @@
-FROM quay.io/giantswarm/ubuntu:0.11.1
+FROM ubuntu
 
 RUN apt-get -y update \
     && apt-get -y install \
